@@ -5,13 +5,13 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: image_pdbp
+            - name: image_pipelinedbp
           runtime:           
             type: image
             image: 
               custom:
-                name: $res_image_pdbp_imageName
-                tag: $res_image_pdbp_imageTag
+                name: $res_image_pipelinedbp_imageName
+                tag: $res_image_pipelinedbp_imageTag
                 registry: demoArt
                 sourceRepository: docker-local
                 autoPull: true
