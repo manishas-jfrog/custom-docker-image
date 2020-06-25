@@ -1,0 +1,21 @@
+pipelines:
+  - name: pipeline_custom_docker_image
+    steps:
+      - name: custom_docker_image
+        type: Bash
+        configuration:
+          inputResources:
+            - name: image_pdbp
+          runtime:           
+            type: image
+            image: 
+              custom:
+                name: $res_image_pdbp_imageName
+                tag: $res_image_pdbp_imageTag
+                registry: demoArt
+                sourceRepository: docker-local
+                autoPull: true
+        execution:
+          - echo $step_image_name
+          - echo $step_image_tag
+   
