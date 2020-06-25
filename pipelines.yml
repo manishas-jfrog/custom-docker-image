@@ -16,6 +16,7 @@ pipelines:
                 sourceRepository: docker-local
                 autoPull: true
         execution:
-          - echo $step_image_name
-          - echo $step_image_tag
+          onExecute:
+            - echo $step_image_name
+            - echo $step_image_tag
    
